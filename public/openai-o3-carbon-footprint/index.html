@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>OpenAI o3: Carbon Footprint | Matej Babis</title>
+<meta name="title" content="OpenAI o3: Carbon Footprint" />
+<meta name="description" content="OpenAI recently previewed o3, the most powerful large language model up to date.
+While the performance capabilities (and their implications) are understandably getting most of the attention, what stood out to me was the cost of running the benchmarks. To evaluate the model, OpenAI partnered with the ARC Prize Foundation to test its ability to learn and apply new skills on the fly, rather than recalling knowledge from its training data - a common issue in today&rsquo;s model benchmarking." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:url" content="http://localhost:1313/openai-o3-carbon-footprint/">
+  <meta property="og:site_name" content="Matej Babis">
+  <meta property="og:title" content="OpenAI o3: Carbon Footprint">
+  <meta property="og:description" content="OpenAI recently previewed o3, the most powerful large language model up to date.
+While the performance capabilities (and their implications) are understandably getting most of the attention, what stood out to me was the cost of running the benchmarks. To evaluate the model, OpenAI partnered with the ARC Prize Foundation to test its ability to learn and apply new skills on the fly, rather than recalling knowledge from its training data - a common issue in today’s model benchmarking.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2024-12-23T13:12:20+01:00">
+    <meta property="article:modified_time" content="2024-12-23T13:12:20+01:00">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="OpenAI o3: Carbon Footprint">
+  <meta name="twitter:description" content="OpenAI recently previewed o3, the most powerful large language model up to date.
+While the performance capabilities (and their implications) are understandably getting most of the attention, what stood out to me was the cost of running the benchmarks. To evaluate the model, OpenAI partnered with the ARC Prize Foundation to test its ability to learn and apply new skills on the fly, rather than recalling knowledge from its training data - a common issue in today’s model benchmarking.">
+
+
+
+
+  <meta itemprop="name" content="OpenAI o3: Carbon Footprint">
+  <meta itemprop="description" content="OpenAI recently previewed o3, the most powerful large language model up to date.
+While the performance capabilities (and their implications) are understandably getting most of the attention, what stood out to me was the cost of running the benchmarks. To evaluate the model, OpenAI partnered with the ARC Prize Foundation to test its ability to learn and apply new skills on the fly, rather than recalling knowledge from its training data - a common issue in today’s model benchmarking.">
+  <meta itemprop="datePublished" content="2024-12-23T13:12:20+01:00">
+  <meta itemprop="dateModified" content="2024-12-23T13:12:20+01:00">
+  <meta itemprop="wordCount" content="653">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
+  
+
+  
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Matej Babis</h2>
+</a>
+<nav><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>OpenAI o3: Carbon Footprint</h1>
+<p>
+  <i>
+    <time datetime='2024-12-23' pubdate>
+      23 Dec, 2024
+    </time>
+  </i>
+</p>
+
+<content>
+  <p>OpenAI recently <a href="https://openai.com/12-days/">previewed</a> <strong>o3</strong>, the most powerful large language model up to date.</p>
+<p>While the performance capabilities (and their implications) are understandably getting most of the attention, what stood out to me was the cost of running the benchmarks. To evaluate the model, OpenAI partnered with the ARC Prize Foundation to test its ability to learn and apply new skills on the fly, rather than recalling knowledge from its training data - a common issue in today&rsquo;s model benchmarking.</p>
+<p>Using the data published in the <a href="https://arcprize.org/blog/oai-o3-pub-breakthrough">benchmark results</a> we can estimate the energy consumed by running the model on a task and, therefore, infer the carbon footprint of a single run.</p>
+<h3 id="tldr">TL;DR</h3>
+<p><strong>Running a task on the o3 model emits as much CO<sub>2</sub> as driving a car for thousands of kilometers.</strong></p>
+<hr>
+<h2 id="computing-the-footprint">Computing the footprint</h2>
+<h3 id="variables">Variables</h3>
+<ul>
+<li>H100 power draw: 700W (assuming 100% TDP) <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+<li>GPU usage rate: $1.50 per H100 GPU/hr (low end assumed) <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
+<li>Data center PUE: 1.18 (Microsoft, Arizona) <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
+<li>Emission factor: 0.37kg CO<sub>2</sub>/kWh <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></li>
+</ul>
+<h3 id="converting-the-available-information-to-gpu-hours">Converting the available information to GPU Hours</h3>
+<p>ARC Prize report<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> on perfomance does not directly mention the cost of running the high-compute model:</p>
+<blockquote>
+<p>o3 high-compute costs not available as pricing and feature availability is still TBD. The amount of compute was roughly 172x the low-compute configuration.</p>
+</blockquote>
+<p>However, since we know the &ldquo;efficient&rdquo; model took $20 per task, high-performance model draws 172 times of that, $3.440.</p>
+\[
+\text{GPU hours}
+= \frac{\text{Task cost}}{\text{Cost per GPU-hour}}
+= \frac{3440}{1.50}
+\approx 2293.33 \,\text{hours},
+\]<p>i.e. ARC Prize benchmark task required approximately 2293.33 hours of H100 GPU time.</p>
+<h3 id="power-consumed-by-running-h100-for-229333-hours">Power consumed by running H100 for 2293.33 hours</h3>
+\[
+0.70 \,\text{kW}
+\times 2293.33 \,\text{h}
+= 1605.33 \,\text{kWh},
+\]<p>including data center overhead this adds up to approximately:</p>
+\[
+1605.33 \,\text{kWh}
+\times 1.18
+\approx 1795 \,\text{kWh}.
+\]<p>So the total electricity consumption at the data‑center level is about 1795 kWh per task for the high-performance deployment.</p>
+<h3 id="co2-emissions">CO<sub>2</sub> emissions</h3>
+<p>With an emission factor of 0.37kg CO<sub>2</sub>/kWh:</p>
+\[
+1795 \,\text{kWh}
+\times 0.37 \,\text{kg $\text{CO}_2$/kWh}
+\approx 665 \,\text{kg $\text{CO}_2$}.
+\]<p>Rounding a bit, <strong>one task produces about 665kg of CO<sub>2</sub></strong>.</p>
+<h2 id="realworld-comparisons">Real‑World Comparisons</h2>
+<p>To put 665kg of CO<sub>2</sub> into perspective, here are some everyday carbon release examples:</p>
+<ol>
+<li><strong>Running a new car for over than 6 000 kilometers</strong><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>;</li>
+<li><strong>42% of average European&rsquo;s home electricity consumption</strong><sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>;</li>
+<li><strong>Flying from London to Miami</strong><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>;</li>
+<li><strong>The amount 30 mature trees can capture over a year</strong><sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>.</li>
+</ol>
+<h2 id="discussion">Discussion</h2>
+<p>This clearly demonstrates the emerging issue of environmental impact of running state-of-the-art LLMs. It is worth mentioning that the estimates here only focus on inference GPU footprint, the overall emissions produced per inference task will be higher as running a model involves other hardware components, overhead from software and personnel, or manufacturing, transportation, and disposal of hardware.</p>
+<p>Once o3 reaches general availability, it is reasonable to expect that the costs of running the model (and, by extension, the associated CO<sub>2</sub> emissions) will be passed on to users. Given the costs now, it is expected that the model will be drastically optimized in order to reduce the costs of running inference. When released in March 2023, the cost of inference on GPT-4 was $60 per 1 million output tokens and $30 per 1 million input tokens. Today, GPT-4o mini, which surpasses GPT-4 in performance benchmarks, costs $0.15 per 1 million input tokens and $0.075 per 1 million input tokens, making it 400 times cheaper.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.nvidia.com/en-us/data-center/h100/">Max Thermal Design Power (TDP): Up to 700W</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://nebius.com/explorer-tier">$1,080/month per one VM with 1 × H100 GPU</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://datacenters.microsoft.com/sustainability/efficiency/">Microsoft&rsquo;s Sustainability Targets: PUE, Arizona</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://www.eia.gov/tools/faqs/faq.php?id=74&amp;t=11">U.S. net generation resulted in &hellip; 0.81 pounds of CO<sub>2</sub> emissions per kWh.</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://arcprize.org/blog/oai-o3-pub-breakthrough">OpenAI o3 ARC-AGI Results</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://www.eea.europa.eu/en/newsroom/news/average-emissions-from-new-cars-and-vans">EU CO<sub>2</sub> emissions from new passenger cars is approximately 108 grams of CO<sub>2</sub> per kilometer.</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Electricity_and_heat_statistics">Electricity consumption per capita in the household sector in the EU in 2022 was 1 584 kWh per capita</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p><a href="https://www.theguardian.com/environment/ng-interactive/2019/jul/19/carbon-calculator-how-taking-one-flight-emits-as-much-as-many-people-do-in-a-year">Flying from Miami to London Heathrow and back generates about 1,373 kg CO<sub>2</sub></a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9">
+<p><a href="https://www.fs.usda.gov/about-agency/features/trees-are-climate-change-carbon-storage-heroe">In one year, a mature live tree can absorb more than 48 pounds of carbon dioxide</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

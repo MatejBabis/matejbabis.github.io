@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Matej Babis</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on Matej Babis</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2024, Matej Babis.</copyright>
+    <lastBuildDate>Mon, 23 Dec 2024 13:12:20 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenAI o3: Carbon Footprint</title>
+      <link>http://localhost:1313/openai-o3-carbon-footprint/</link>
+      <pubDate>Mon, 23 Dec 2024 13:12:20 +0100</pubDate>
+      <guid>http://localhost:1313/openai-o3-carbon-footprint/</guid>
+      <description>&lt;p&gt;OpenAI recently &lt;a href=&#34;https://openai.com/12-days/&#34;&gt;previewed&lt;/a&gt; &lt;strong&gt;o3&lt;/strong&gt;, the most powerful large language model up to date.&lt;/p&gt;&#xA;&lt;p&gt;While the performance capabilities (and their implications) are understandably getting most of the attention, what stood out to me was the cost of running the benchmarks. To evaluate the model, OpenAI partnered with the ARC Prize Foundation to test its ability to learn and apply new skills on the fly, rather than recalling knowledge from its training data - a common issue in today&amp;rsquo;s model benchmarking.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
