@@ -2,11 +2,13 @@
 title = "Home"
 +++
 
-# datadatadata
+## datadatadata
 
-Made in Prague.
+currently builiding complex GenAI systems.
 
-Shaped by Glasgow, Melbourne, London and Toulouse.
+made in Prague,
+
+shaped by [Glasgow](https://www.gla.ac.uk/), [Melbourne](https://www.unimelb.edu.au/), [London](https://www.ucl.ac.uk/) and [Toulouse](https://www.esa.int/) 🚀.
 
 ---
 
