@@ -7,7 +7,7 @@ tags = []
 
 OpenAI recently [previewed](https://openai.com/12-days/) **o3**, the most powerful large language model up to date.
 
-While the performance capabilities (and their implications) are understandably getting most of the attention, what stood out to me was the cost of running the benchmarks. To evaluate the model, OpenAI partnered with the ARC Prize Foundation to test its ability to learn and apply new skills on the fly, rather than recalling knowledge from its training data - a common issue in today's model benchmarking.
+While the performance capabilities (and their implications) are understandably getting most of the attention, what stood out to me was the cost of running the benchmarks. To evaluate the model, OpenAI partnered with the ARC Prize Foundation to assess its ability to efficiently acquire and apply new skills on the fly, rather than relying solely on recalling knowledge from its training data - a common limitation in today’s model benchmarking.
 
 Using the data published in the [benchmark results](https://arcprize.org/blog/oai-o3-pub-breakthrough) we can estimate the energy consumed by running the model on a task and, therefore, infer the carbon footprint of a single run.
 
@@ -78,7 +78,7 @@ Rounding a bit, **one task produces about 665kg of CO~2~**.
 To put 665kg of CO~2~ into perspective, here are some everyday carbon release examples:
 
 1. **Running a new car for over than 6 000 kilometers**[^6];
-2. **42% of average European's home electricity consumption**[^7];
+2. **42% of average European's annual home electricity consumption**[^7];
 3. **Flying from London to Miami**[^8];
 4. **The amount 30 mature trees can capture over a year**[^9].
 
