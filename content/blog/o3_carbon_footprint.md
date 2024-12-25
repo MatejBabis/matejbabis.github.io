@@ -17,9 +17,7 @@ Using the data published in the [benchmark results](https://arcprize.org/blog/oa
 
 ---
 
-> 25 Dec, 2024
->
-> EDIT: It appears that Boris Gamazaychikov has [explored](https://www.linkedin.com/posts/bgamazay_openai-has-announced-o3-which-appears-to-activity-7276250095019335680-sVbW/) something similar. While we have reached comparable conclusions, my approach takes a deeper dive into the details and methodology behind estimating the footprint.
+*EDIT 25 Dec: It appears that Boris Gamazaychikov has [explored](https://www.linkedin.com/posts/bgamazay_openai-has-announced-o3-which-appears-to-activity-7276250095019335680-sVbW/) something similar. While we have reached comparable conclusions, my approach takes a deeper dive into the details and methodology behind estimating the footprint.*
 
 ---
 
