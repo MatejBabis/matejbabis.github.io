@@ -40,7 +40,7 @@ While the performance capabilities (and their implications) are understandably g
 While the performance capabilities (and their implications) are understandably getting most of the attention, what stood out to me was the cost of running the benchmarks. To evaluate the model, OpenAI partnered with the ARC Prize Foundation to assess its ability to efficiently acquire and apply new skills on the fly, rather than relying solely on recalling knowledge from its training data - a common limitation in today’s model benchmarking.">
   <meta itemprop="datePublished" content="2024-12-23T13:12:20+01:00">
   <meta itemprop="dateModified" content="2024-12-23T13:12:20+01:00">
-  <meta itemprop="wordCount" content="1024">
+  <meta itemprop="wordCount" content="1023">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -66,6 +66,7 @@ While the performance capabilities (and their implications) are understandably g
   strong,
   b {
     color: #222;
+    margin-top: 30px;
   }
 
   .title {
@@ -268,7 +269,6 @@ While the performance capabilities (and their implications) are understandably g
 <p><strong>O3&rsquo;s single high-performance run: ~635 kg of CO₂. That&rsquo;s akin to driving 6,000 km in a new car, or one European&rsquo;s annual household energy usage.</strong></p>
 <hr>
 <p><em>EDIT 25 Dec: It appears that Boris Gamazaychikov has <a href="https://www.linkedin.com/posts/bgamazay_openai-has-announced-o3-which-appears-to-activity-7276250095019335680-sVbW/">explored</a> something similar. While we have reached comparable conclusions, my approach takes a deeper dive into the details and methodology behind estimating the footprint.</em></p>
-<hr>
 <h2 id="computing-the-footprint">Computing the footprint</h2>
 <h3 id="variables">Variables</h3>
 <ul>
@@ -283,7 +283,7 @@ While the performance capabilities (and their implications) are understandably g
 <li>Data center electricity costs: $0.0733 per kWh <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></li>
 <li>Emission factor: 0.37kg CO<sub>2</sub> per kWh <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></li>
 </ul>
-<h3 id="openais-gpu-hour-cost-estimate">OpenAI&rsquo;s GPU hour cost estimate</h3>
+<h3 id="gpu-hour-cost-estimate">GPU hour cost estimate</h3>
 <p>As part of the partnership with OpenAI, we can assume Microsoft provides the GPU infrastructure rather than OpenAI needing to lease it from a third party. Thus, we should compare the cost of purchasing and operating an H100 from the datacenter provider&rsquo;s perspective, not the consumer&rsquo;s.</p>
 <p>Assuming 90% TDP, let&rsquo;s first compute H100&rsquo;s power draw adjusted for PUE:</p>
 \[
@@ -299,7 +299,7 @@ While the performance capabilities (and their implications) are understandably g
 \$0.055 + \$1.43
 \approx \$1.49 \text{ per hour}
 \]<p>The actual infrastructure cost might be slightly lower if the provider optimizes by running tasks in regions with cheaper electricity or lower cooling costs. That said, this estimate is entirely reasonable when compared to commercial GPU/hour rates.</p>
-<h3 id="converting-the-available-information-to-gpu-hours">Converting the available information to GPU Hours</h3>
+<h3 id="converting-the-available-information-to-gpu-hours">Converting the available information to GPU hours</h3>
 <p>The <a href="https://arcprize.org/blog/oai-o3-pub-breakthrough">ARC Prize report</a> on perfomance does not directly mention the cost of running the high-compute model:</p>
 <blockquote>
 <p>Note: o3 high-compute costs not available as pricing and feature availability is still TBD. The amount of compute was roughly 172x the low-compute configuration.</p>

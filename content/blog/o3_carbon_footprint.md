@@ -19,8 +19,6 @@ Using the data published in the [benchmark results](https://arcprize.org/blog/oa
 
 *EDIT 25 Dec: It appears that Boris Gamazaychikov has [explored](https://www.linkedin.com/posts/bgamazay_openai-has-announced-o3-which-appears-to-activity-7276250095019335680-sVbW/) something similar. While we have reached comparable conclusions, my approach takes a deeper dive into the details and methodology behind estimating the footprint.*
 
----
-
 ## Computing the footprint
 
 ### Variables
@@ -33,7 +31,7 @@ Using the data published in the [benchmark results](https://arcprize.org/blog/oa
 * Emission factor: 0.37kg CO~2~ per kWh [^7]
 
 
-### OpenAI's GPU hour cost estimate
+### GPU hour cost estimate
 
 As part of the partnership with OpenAI, we can assume Microsoft provides the GPU infrastructure rather than OpenAI needing to lease it from a third party. Thus, we should compare the cost of purchasing and operating an H100 from the datacenter provider's perspective, not the consumer's.
 
@@ -62,7 +60,7 @@ Now we can conclude the estimated price per GPU hour is $1.49.
 
 The actual infrastructure cost might be slightly lower if the provider optimizes by running tasks in regions with cheaper electricity or lower cooling costs. That said, this estimate is entirely reasonable when compared to commercial GPU/hour rates.
 
-### Converting the available information to GPU Hours
+### Converting the available information to GPU hours
 
 The [ARC Prize report](https://arcprize.org/blog/oai-o3-pub-breakthrough) on perfomance does not directly mention the cost of running the high-compute model:
 
