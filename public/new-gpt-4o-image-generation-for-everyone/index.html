@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/favicon.ico" />
+<title>New GPT-4o: Image Generation for Everyone | Matej Babis</title>
+<meta name="title" content="New GPT-4o: Image Generation for Everyone" />
+<meta name="description" content="OpenAI&rsquo;s updated GPT-4o model now not only accepts images as inputs but also generates them. This update re-establishes OpenAI as a leader in image generation, especially after its previous model, DALL-E, had fallen behind top players like the startup Reve and corporate rivals such as Google with their Imagen 3 model.
+The ability to output images is something I have seen requested many times by clients in their LLM-based projects. Many were surprised that such powerful models - capable of processing both audio and images - cannot currently output altered versions of those inputs. Leveraging its massive ChatGPT user base, OpenAI now addresses this limitation by offering the new model version to all users, including those on the free tier." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:url" content="http://localhost:1313/new-gpt-4o-image-generation-for-everyone/">
+  <meta property="og:site_name" content="Matej Babis">
+  <meta property="og:title" content="New GPT-4o: Image Generation for Everyone">
+  <meta property="og:description" content="OpenAI’s updated GPT-4o model now not only accepts images as inputs but also generates them. This update re-establishes OpenAI as a leader in image generation, especially after its previous model, DALL-E, had fallen behind top players like the startup Reve and corporate rivals such as Google with their Imagen 3 model.
+The ability to output images is something I have seen requested many times by clients in their LLM-based projects. Many were surprised that such powerful models - capable of processing both audio and images - cannot currently output altered versions of those inputs. Leveraging its massive ChatGPT user base, OpenAI now addresses this limitation by offering the new model version to all users, including those on the free tier.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-03-26T11:18:39+01:00">
+    <meta property="article:modified_time" content="2025-03-26T11:18:39+01:00">
+    <meta property="og:image" content="http://localhost:1313/new-gpt-4o-image-generation-for-everyone/image-gen-for-dummies.jpeg">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/new-gpt-4o-image-generation-for-everyone/image-gen-for-dummies.jpeg">
+  <meta name="twitter:title" content="New GPT-4o: Image Generation for Everyone">
+  <meta name="twitter:description" content="OpenAI’s updated GPT-4o model now not only accepts images as inputs but also generates them. This update re-establishes OpenAI as a leader in image generation, especially after its previous model, DALL-E, had fallen behind top players like the startup Reve and corporate rivals such as Google with their Imagen 3 model.
+The ability to output images is something I have seen requested many times by clients in their LLM-based projects. Many were surprised that such powerful models - capable of processing both audio and images - cannot currently output altered versions of those inputs. Leveraging its massive ChatGPT user base, OpenAI now addresses this limitation by offering the new model version to all users, including those on the free tier.">
+
+
+
+
+  <meta itemprop="name" content="New GPT-4o: Image Generation for Everyone">
+  <meta itemprop="description" content="OpenAI’s updated GPT-4o model now not only accepts images as inputs but also generates them. This update re-establishes OpenAI as a leader in image generation, especially after its previous model, DALL-E, had fallen behind top players like the startup Reve and corporate rivals such as Google with their Imagen 3 model.
+The ability to output images is something I have seen requested many times by clients in their LLM-based projects. Many were surprised that such powerful models - capable of processing both audio and images - cannot currently output altered versions of those inputs. Leveraging its massive ChatGPT user base, OpenAI now addresses this limitation by offering the new model version to all users, including those on the free tier.">
+  <meta itemprop="datePublished" content="2025-03-26T11:18:39+01:00">
+  <meta itemprop="dateModified" content="2025-03-26T11:18:39+01:00">
+  <meta itemprop="wordCount" content="780">
+  <meta itemprop="image" content="http://localhost:1313/new-gpt-4o-image-generation-for-everyone/image-gen-for-dummies.jpeg">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+    margin-top: 30px;
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  header {
+    font-size: 16px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: inherit;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: inherit;
+      text-decoration:underline;
+      text-decoration-color: #ff4f40;
+    }
+
+    a:hover {
+      background-color: #ff4f40;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: inherit;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
+  
+
+  
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Matej Babis</h2>
+</a>
+<nav><a href="/">home</a>
+
+
+<a href="/blog">blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>New GPT-4o: Image Generation for Everyone</h1>
+<p>
+  <i>
+    <time datetime='2025-03-26' pubdate>
+      26 Mar, 2025
+    </time>
+  </i>
+</p>
+
+<content>
+  <p>OpenAI&rsquo;s <a href="https://openai.com/index/introducing-4o-image-generation/">updated</a> GPT-4o model now not only accepts images as inputs but also generates them. This update re-establishes OpenAI as a leader in image generation, especially after its previous model, DALL-E, had fallen behind <a href="https://x.com/ArtificialAnlys/status/1904188980423467472">top players</a> like the startup <a href="https://preview.reve.art/">Reve</a> and corporate rivals such as Google with their <a href="https://deepmind.google/technologies/imagen-3/">Imagen 3</a> model.</p>
+<p>The ability to output images is something I have seen requested many times by clients in their LLM-based projects. Many were surprised that such powerful models - capable of processing both audio and images - cannot currently output altered versions of those inputs. Leveraging its massive ChatGPT user base, OpenAI now addresses this limitation by offering the new model version to all users, <a href="https://openai.com/index/introducing-4o-image-generation/#access-and-availability">including</a> those on the free tier.</p>
+<p>Although impressive image generation models already exist, what sets Google&rsquo;s - and now OpenAI&rsquo;s - approach apart is its availability: The number of weekly ChatGPT users <a href="https://www.reuters.com/technology/artificial-intelligence/openais-weekly-active-users-surpass-400-million-2025-02-20/">surpassed 400M last month</a>. Moreover, companies already integrating LLMs often have existing partnerships with leading providers, making it easy for them to experiment with image generation without the hassle of establishing new agreements with niche vendors.</p>
+<hr>
+<p>Since I&rsquo;m a visual learner, I wanted to explore a use case where the model generates simple diagrams to guide readers through a series of steps.</p>
+<h3 id="example-1-text-to-image-generation">Example 1: Text to Image Generation</h3>
+<p>For this experiment, I aimed to generate a clear visual output that demonstrates the necessary tools and step-by-step instructions. In this instance, I asked for a diagram on how to change a tire.</p>
+<p><img src="tire-replacement-diagram.jpg" alt="Replacement Diagram">
+(Best of 4)</p>
+<p>Although the output still has a slightly cartoony style (which could be improved by refining the prompt), it not only accurately depicts all the relevant aspects of the task but also exhibits a solid semantic understanding of it: Correct steps are established (hardly impressive in today&rsquo;s state of LLMs), but they are also clearly and sequentially laid out in the image, providing a figure that describes the task visually using only a handful of words.</p>
+<h3 id="example-2-text--image-to-image-generation">Example 2: Text + Image to Image Generation</h3>
+<p>A slightly different task involves combining a textual prompt with an existing image. Here, I asked the model to identify where the &rsquo;lug nuts&rsquo; appear in the photo and to annotate each with a unique number.</p>
+<h4 id="original-photo">Original Photo</h4>
+<p><img src="tire-original-photo.jpeg" alt="Original Photo"></p>
+<h4 id="annotated-photo">Annotated Photo</h4>
+<p><img src="tire-annotated-photo.jpg" alt="Annotated Photo">
+(Best of 4)</p>
+<p>Although this is a toy example, it clearly demonstrates the model&rsquo;s ability to both understand the content of an image and follow textual instructions simultaneously. What&rsquo;s interesting here is that the model leverages tokens rather than traditional diffusion methods<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, essentially performing reasoning directly on the image. One can do transformations that conserve parts of the original. For instance, changing the background while keeping the subject unchanged.</p>
+<p>An interesting side-effect I have observed is that this is still not 100% consistent. As you can see in the example above, the output is slightly altered and refined. For example, the car maker&rsquo;s logo appears rotated. That being said, input groundedness will certainly be improved upon in future updates.</p>
+<hr>
+<p>Image reasoning opens up a range of applications. For example, this feature could serve as a Q&amp;A tool that simultaneously identifies key elements in an image and applies relevant knowledge - all within a single request. Another example could be converting hand-drawn scribbles into presentation-ready computer graphics. Another potential application is accessibility, as LLMs can assist users with visual impairments by converting visual content into more accessible formats.</p>
+<p>With over 400 million weekly ChatGPT users, it&rsquo;s clear that this new tool is already sparking innovative ideas. I anticipate that soon, a broader range of products will harness these accessible image generating and image understanding models.</p>
+<h3 id="side-note-on-privacy">Side-note on Privacy</h3>
+<p>According to OpenAI&rsquo;s <a href="https://cdn.openai.com/11998be9-5319-4302-bfbf-1167e093f1fb/Native_Image_Generation_System_Card.pdf">system card</a>, the model <strong>is not restricted</strong> from generating content that includes adult public figures. Public figures who do not wish to have their likeness generated can opt out. I&rsquo;m curious to see not only how this opt-out mechanism will work in practice and how effective it will be, but also what implications may arise from the ability to generate photorealistic content of public figures without their consent.</p>
+<p>The <a href="https://sora.com/explore">explore page on Sora</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, which features trending user-generated content, already showcases numerous realistic fakes of public figures as well as suggestive imagery involving women. This raises important questions about consent and the ethical use of photorealistic image generation.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>A diffusion model is an ML algorithm that generates high-quality data by progressively adding noise to a dataset and then learning to reverse this process to create new data. It works by turning an image into noise and then learning to turn that noise back into an image.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Sora is OpenAI&rsquo;s AI model that generates videos from text prompts. Its website includes a gallery of user-generated content, including GPT-4o outputs.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>
