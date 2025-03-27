@@ -38,11 +38,11 @@ A slightly different task involves combining a textual prompt with an existing i
 
 Although this is a toy example, it clearly demonstrates the model's ability to both understand the content of an image and follow textual instructions simultaneously. What's interesting here is that the model leverages tokens rather than traditional diffusion methods[^1], essentially performing reasoning directly on the image. One can do transformations that conserve parts of the original. For instance, changing the background while keeping the subject unchanged.
 
-An interesting side-effect I have observed is that this is still not 100% consistent. As you can see in the example above, the output is slightly altered and refined. For example, the car maker's logo appears rotated. That being said, input groundedness will certainly be improved upon in future updates.
+That being said, the solution is not bullet-proof: Two of the lug nuts are labelled '5'. An interesting side-effect I have also observed is that the outputs are not 100% consistent with the inputs. As you can see in the example above, the photo is slightly altered and refined. For example, the car maker's logo appears rotated. That being said, input groundedness will certainly be improved upon in future updates.
 
 ---
 
-Image reasoning opens up a range of applications. For example, this feature could serve as a Q&A tool that simultaneously identifies key elements in an image and applies relevant knowledge - all within a single request. Another example could be converting hand-drawn scribbles into presentation-ready computer graphics. Another potential application is accessibility, as LLMs can assist users with visual impairments by converting visual content into more accessible formats.
+Image reasoning opens up a range of applications. For example, this feature could serve as a Q&A tool that simultaneously identifies key elements in an image and applies relevant knowledge - all within a single request. Next example could be converting hand-drawn scribbles into presentation-ready computer graphics. Another potential application is accessibility, as LLMs can assist users with visual impairments by converting visual content into more accessible formats.
 
 With over 400 million weekly ChatGPT users, it's clear that this new tool is already sparking innovative ideas. I anticipate that soon, a broader range of products will harness these accessible image generating and image understanding models.
 
